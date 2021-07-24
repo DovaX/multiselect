@@ -46,3 +46,24 @@ class Multiselect:
     def untick_by_indices(self,indices):
         for index in indices:
             self.data[index]["value"]=False
+
+        
+    def toggle_first_by_key(self,key):
+        index=self.keys().index(key)
+        if self.data[index]["value"]:
+            self.untick_first_by_key(key)
+        else:
+            self.tick_first_by_key(key)
+            
+    def toggle_all_by_key(self,key):
+        indices=[i for i,x in enumerate(self.keys()) if x==key]
+        self.toggle_by_indices(indices)
+            
+    def toggle_by_indices(self,indices):
+        for index in indices:
+            if self.data[index]["value"]:
+                self.untick_by_indices([index])
+            else:
+                self.tick_by_indices([index])
+    
+      
