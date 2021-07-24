@@ -67,3 +67,18 @@ class Multiselect:
                 self.tick_by_indices([index])
     
       
+    def get_ticked_indices(self):
+        return([i for i,x in enumerate(self.keys()) if self.data[i]["value"]==True])
+        
+    def get_unticked_indices(self):
+        return([i for i,x in enumerate(self.keys()) if self.data[i]["value"]==False])
+
+    def __str__(self):
+        return("<Multiselect object> "+str(self.data))
+    
+    def __getitem__(self,key):
+        try:
+            index=self.keys().index(key)
+            return(self.data[index]["value"])        
+        except ValueError as e:
+            raise KeyError("'"+key+"' is not in the multiselect")
