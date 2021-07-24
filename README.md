@@ -1,7 +1,7 @@
 # multiselect
 A Python package for easy storing and manipulating with data coming from a multiselect dropdown menu
 
-## Motivation - Why Multiselect?
+## Motivation - Why multiselect?
 Multiselect package solves the problem of storing data for multiselect dropdown menus even in case there are duplicate values, keeps the order of items and can easily work with the data by quick subsetting of ticked and unticked data.
 Motivation comes also from the following question
 https://stackoverflow.com/questions/68503522/is-there-a-preferred-way-to-store-multiselect-values
@@ -16,7 +16,7 @@ pip install multiselect
 
 ## Usage
 
-```
+```python
 from multiselect.multiselect_core import Multiselect
 
 fruits=["Apple","Pear","Apricot","Banana","Orange","Raspberry","Blueberry","Kiwi","Pineapple"]
