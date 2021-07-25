@@ -1,5 +1,4 @@
-from multiselect.multiselect_core import Multiselect
-
+from multiselect_core import Multiselect
 
 fruits=["Apple","Pear","Apricot","Banana","Orange","Raspberry","Blueberry","Kiwi","Pineapple"]
 
@@ -21,27 +20,29 @@ multiselect4=Multiselect.init_from_options(fruits) #4th way how to initialize
 multiselect4.tick_all_by_keys(["Apricot","Orange","Raspberry"])
 
 
-
 print(multiselect.data)
-#[{'key': 'Apple', 'value': False}, {'key': 'Pear', 'value': False}, {'key': 'Apricot', 'value': True}, {'key': 'Banana', 'value': False}]
+#[{'key': 'Apple', 'value': False}, {'key': 'Pear', 'value': False}, {'key': 'Apricot', 'value': True}, {'key': 'Banana', 'value': False}, {'key': 'Orange', 'value': True}, {'key': 'Raspberry', 'value': True}, {'key': 'Kiwi', 'value': False}, {'key': 'Pineapple', 'value': False}]
 
 print(multiselect.keys())
-#['Apple', 'Pear', 'Apricot', 'Banana']
+#[Apple', 'Pear', 'Apricot', 'Banana', 'Orange', 'Raspberry', 'Kiwi', 'Pineapple']
 
 print(multiselect.values())
-#[False, False, True, False]
+#[False, False, True, False, True, True, False, False]
 
 print(multiselect)
-#<Multiselect object> [{'key': 'Apple', 'value': False}, {'key': 'Pear', 'value': False}, {'key': 'Apricot', 'value': True}, {'key': 'Banana', 'value': False}]
+#<Multiselect object> [{'key': 'Apple', 'value': False}, {'key': 'Pear', 'value': False}, {'key': 'Apricot', 'value': True}, {'key': 'Banana', 'value': False}, {'key': 'Orange', 'value': True}, {'key': 'Raspberry', 'value': True}, {'key': 'Kiwi', 'value': False}, {'key': 'Pineapple', 'value': False}]
 
 print(multiselect["Apple"])
 #False
 
 print(multiselect.items())
-#[('Apple', False), ('Pear', False), ('Apricot', True), ('Banana', False)]
+#[('Apple', False), ('Pear', False), ('Apricot', True), ('Banana', False), ('Orange', True), ('Raspberry', True), ('Kiwi', False), ('Pineapple', False)]
 
 print(multiselect.get_ticked_indices())
 #[2, 4, 5]
 
 print(multiselect.get_unticked_indices())
 #[0, 1, 3, 6, 7]
+
+
+multiselect["Apple"]=True
